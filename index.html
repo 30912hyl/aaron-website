@@ -4,6 +4,7 @@
     <!-- Meta tags define character set and viewport for responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio website for Aaron Lee, a recent graduate specializing in Software Development, Embedded Systems, and Data Engineering.">
 
     <!-- This is the text that appears in the browser tab -->
     <title>Aaron Lee - Personal Portfolio</title> 
@@ -16,62 +17,100 @@
 
     <!-- Header Section: Usually contains main heading and maybe tagline/nav -->
     <header>
-        <h1>Aaron Lee</h1> 
-        <p>Aspiring Software Developer | New Graduate</p> 
-        <!-- Navigation can also go in the header or its own <nav> tag -->
+        <nav>
+            <a href="#home" class="logo">Aaron Lee</a> <!-- Or use an actual logo image -->
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Optional: Link to your resume TODO-->
+                <li><a href="[Link_To_Your_Resume.pdf]" target="_blank" class="resume-button">Resume</a></li> 
+            </ul>
+        </nav>
     </header>
-
-    <!-- Navigation Section (Optional placement, can be in header too) -->
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <!-- Add link to Resume later -->
-        </ul>
-    </nav>
 
     <!-- Main Content Area: Contains the core sections of your page -->
     <main>
+        <!-- Hero Section: Introduction / Welcome -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm Aaron Lee</h1>
+                <h2>A passionate [Your Title/Aspiration, e.g., Software Engineer, Full-Stack Developer, UX/UI Designer]</h2>
+                <p class="tagline">[A brief, engaging tagline about yourself or what you do, e.g., Building creative solutions for the web. | Eager to leverage data to solve real-world problems.]</p>
+                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="#contact" class="cta-button secondary">Get In Touch</a>
+            </div>
+            <!-- Optional: Add a profile picture -->
+            <!-- <img src="images/profile-picture.jpg" alt="Profile picture of Aaron Lee" class="profile-pic"> -->
+        </section>
 
-        <!-- About Section -->
-        <section id="about"> <!-- id allows linking from nav -->
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <p>
+                Welcome! I'm a recent graduate from UC Santa Barbara with a degree in Computer Engineering. I'm deeply interested in [Your Specific Interests, e.g., building efficient backend systems, creating intuitive user interfaces, analyzing complex datasets].
+            </p>
+            <p>
+                During my studies, I focused on [Mention key areas or coursework, e.g., software development principles, machine learning algorithms, human-computer interaction]. I'm now eager to apply my skills and passion to contribute to innovative projects in [Your Desired Industry/Area]. I'm a quick learner, a collaborative team player, and I'm excited about the challenges ahead.
+            </p>
+            <!-- Optional: Add more personal details like hobbies if appropriate -->
+        </section>
+        <!--
+        <section id="about"> 
             <h2>About Me</h2>
             <p>
                 Welcome! I am a recent Computer Engineering graduate from UC Santa Barbara passionate interested in entry-level opportunities in software, firmware, embedded, and data.
                 I enjoy building efficient and scalable solutions to real-world problems. This website showcases some of my work and skills.
-                <!-- Add more about yourself here -->
             </p>
         </section>
-
+        -->
         <!-- Projects Section -->
-        <section id="projects">
-            <h2>My Projects</h2>
-            <p>Here are a few projects I've worked on:</p>
-            <!-- You will add project details here later, maybe using <article> tags -->
-            <article>
-                <h3>Low-Latency On-Disk Database For Blockchain</h3>
-                <p>Description of the project...</p>
-                <p>Technologies used: HTML, CSS, JavaScript</p>
-                <a href="#">View Code (GitHub)</a> <!-- Link to GitHub repo -->
-                <!-- <a href="#">Live Demo</a> --> <!-- Optional link to live version -->
-            </article>
-            <article>
-                <h3>Real-Time Facial Recognition Analyzer</h3>
-                <p>Description of the project...</p>
-                <p>Technologies used: Python, Flask, etc.</p>
-                <a href="#">View Code (GitHub)</a>
-            </article>
-            <article>
-                <h3>Parallelized Web Scraper Tool</h3>
-                <p>Description of the project...</p>
-                <p>Technologies used: Python, Flask, etc.</p>
-                <a href="#">View Code (GitHub)</a>
-            </article>
-        </section>
+         
+        <section id="projects" class="projects-section">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <!-- Optional: <img src="images/project1-thumbnail.jpg" alt="Screenshot of Project 1"> -->
+                    <h3>[Project Title 1]</h3>
+                    <p>[Brief description of the project: what it does, the problem it solves.]</p>
+                    <p><strong>Technologies:</strong> [List key technologies used, e.g., React, Node.js, MongoDB]</p>
+                    <div class="project-links">
+                        <a href="[Link to Live Demo (if applicable)]" target="_blank" class="project-button">Live Demo</a>
+                        <a href="[Link to GitHub Repository]" target="_blank" class="project-button">View Code</a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <!-- Optional: <img src="images/project2-thumbnail.jpg" alt="Screenshot of Project 2"> -->
+                    <h3>[Project Title 2]</h3>
+                    <p>[Brief description of the project: what it does, the problem it solves.]</p>
+                    <p><strong>Technologies:</strong> [List key technologies used, e.g., Python, Flask, PostgreSQL]</p>
+                    <div class="project-links">
+                        <!-- <a href="[Link to Live Demo]" target="_blank" class="project-button">Live Demo</a> -->
+                        <a href="[Link to GitHub Repository]" target="_blank" class="project-button">View Code</a>
+                    </div>
+                </article>
+
+                <!-- Add more project cards as needed -->
+                <article class="project-card">
+                    <h3>[Project Title 3 - Maybe a University Project]</h3>
+                    <p>[Brief description of the project.]</p>
+                    <p><strong>Technologies:</strong> [List key technologies used]</p>
+                        <div class="project-links">
+                        <a href="[Link to GitHub Repository]" target="_blank" class="project-button">View Code</a>
+                        <!-- Maybe link to a report or presentation if no live demo/code -->
+                        <!-- <a href="[Link to Report.pdf]" target="_blank" class="project-button">View Report</a> -->
+                    </div>
+                </article>
+
+            </div>
+        </section>    
 
         <!-- Contact Section -->
-        <section id="contact">
+        <section id="contact" class="contact-section">
             <h2>Get In Touch</h2>
             <p>
                 You can reach me via text or email. I'd love to connect on LinkedIn!
@@ -82,6 +121,21 @@
                 <li>LinkedIn: <a href="https://www.linkedin.com/in/hao-lee-582768256/" target="_blank">LinkedIn</a></li>
                 <li>GitHub: <a href="https://github.com/30912hyl" target="_blank">GitHub</a></li>
             </ul>
+            <!-- Optional: Add a simple contact form (requires backend or service like Formspree) -->
+            <!--
+            <form action="[Your Formspree endpoint or backend script]" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            -->
         </section>
 
     </main>

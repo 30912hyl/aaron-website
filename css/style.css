@@ -1,3 +1,642 @@
+/* style.css */
+
+/* --------------------- */
+/* Variables & Base Styles */
+/* --------------------- */
+:root {
+    --primary-color: #0a2540; /* Dark blue - sophisticated */
+    --secondary-color: #4a90e2; /* Medium blue - accent */
+    --light-bg: #f8f9fa; /* Very light gray - background */
+    --text-color: #333; /* Dark gray - body text */
+    --light-text: #f8f9fa; /* Light text for dark backgrounds */
+    --border-color: #dee2e6; /* Light gray border */
+    --hover-color: #3a7bc8; /* Slightly darker blue for hover */
+
+    --font-main: 'Helvetica Neue', Arial, sans-serif; /* Clean sans-serif stack */
+    --font-headings: 'Georgia', serif; /* Optional: Serif for headings */
+
+    --header-height: 70px; /* Define header height for offsetting content */
+}
+
+/* Basic Reset & Box Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for internal links */
+    font-size: 16px; /* Base font size */
+}
+
 body {
-    background-color: lightblue;
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff; /* White background */
+    padding-top: var(--header-height); /* Prevent content from hiding under fixed header */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings); /* Optional: Use serif for headings */
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+    color: var(--primary-color);
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.4rem; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevents extra space below images */
+}
+
+ul {
+    list-style: none; /* Remove default bullets */
+}
+
+section {
+    padding: 60px 20px; /* Vertical and horizontal padding */
+    /* Offset for fixed header when navigating via ID */
+    scroll-margin-top: var(--header-height);
+}
+
+/* Alternating Backgrounds for Sections (Optional) */
+section:nth-of-type(even) {
+    background-color: var(--light-bg);
+}
+
+/* Container for centered content (Optional, can apply directly to sections if preferred) */
+.container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* --------------------- */
+/* Header & Navigation   */
+/* --------------------- */
+header {
+    background-color: #fff;
+    position: fixed; /* Stick to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; /* Vertically center nav content */
+    padding: 0 20px; /* Padding inside the header */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between; /* Logo left, links right */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit nav width */
+    margin: 0 auto; /* Center nav within header */
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+header .logo:hover {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between nav items */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 5px 0; /* Add padding for easier clicking */
+    position: relative; /* For potential underline effects */
+}
+
+header nav ul li a:hover,
+header nav ul li a.active /* Add 'active' class via JS if needed */ {
+    color: var(--secondary-color);
+}
+
+/* Optional: Underline effect on hover/active */
+/* header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width: 100%;
+} */
+
+
+header .resume-button {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+header .resume-button:hover {
+    background-color: var(--hover-color);
+    color: var(--light-text);
+    text-decoration: none;
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* --------------------- */
+/* Hero Section          */
+/* --------------------- */
+.hero {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 100px 20px 80px; /* More padding for impact */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(80vh - var(--header-height)); /* Make hero section tall */
+}
+
+.hero h1 {
+    color: #fff; /* Override default heading color */
+    margin-bottom: 0.3em;
+    font-weight: 700;
+}
+
+.hero h2 {
+    color: rgba(255, 255, 255, 0.85); /* Slightly muted white */
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    font-weight: 400; /* Lighter weight for subtitle */
+    font-family: var(--font-main); /* Use main font for subtitle */
+}
+
+.hero .tagline {
+    font-size: 1.1rem;
+    margin-bottom: 2em;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px; /* Limit tagline width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero .cta-button {
+    display: inline-block; /* Allow margin */
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.hero .cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.hero .cta-button:hover {
+    background-color: var(--hover-color);
+    color: var(--light-text); /* Ensure text is light on hover */
+    border-color: var(--hover-color); /* Match border for secondary */
+    text-decoration: none;
+    transform: translateY(-2px); /* Slightly more lift */
+}
+
+.hero .cta-button.secondary:hover {
+    background-color: var(--secondary-color); /* Fill on hover */
+    color: var(--light-text);
+}
+
+.hero .profile-pic { /* If you uncomment the HTML */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Make it circular */
+    margin-top: 30px;
+    border: 5px solid var(--light-bg);
+    object-fit: cover; /* Ensure image covers space without distortion */
+}
+
+/* --------------------- */
+/* About Section         */
+/* --------------------- */
+.about-section {
+    max-width: 800px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --------------------- */
+/* Skills Section        */
+/* --------------------- */
+.skills-section h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background-color: #fff; /* White background for categories if section bg is light-gray */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* If sections alternate bg, adjust skill-category background */
+section:nth-of-type(even) .skill-category {
+     background-color: #fff; /* Ensure white card on light gray bg */
+}
+section:nth-of-type(odd) .skill-category {
+     background-color: var(--light-bg); /* Light gray card on white bg */
+     border: none; /* Remove border if bg provides contrast */
+}
+
+.skill-category h3 {
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.3em;
+    display: inline-block; /* Make border only as wide as text */
+}
+
+.skill-category ul {
+    padding-left: 0; /* Remove default padding */
+}
+
+.skill-category ul li {
+    margin-bottom: 0.5em;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px; /* Space for pseudo-element bullet */
+}
+
+/* Custom bullet point (Optional) */
+.skill-category ul li::before {
+    content: '▹'; /* Or use Font Awesome icons */
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-weight: bold;
+}
+
+
+/* --------------------- */
+/* Projects Section      */
+/* --------------------- */
+.projects-section h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.projects-grid {
+    display: grid;
+    /* Creates 1 column on small screens, up to 3 on large */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Space between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #fff; /* Card background */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are rounded if image is first child */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* If sections alternate bg, adjust project-card background */
+section:nth-of-type(even) .project-card {
+     background-color: #fff;
+}
+section:nth-of-type(odd) .project-card {
+     background-color: var(--light-bg);
+     border: none;
+}
+
+.project-card img { /* Style if you add images */
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover area without distortion */
+}
+
+/* Add padding to content inside card if image is present */
+.project-card h3,
+.project-card p,
+.project-card .project-links {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.project-card h3 {
+    margin-top: 20px; /* Space above title if no image */
+    color: var(--primary-color);
+}
+
+.project-card p {
+    flex-grow: 1; /* Allows description to push links down */
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.project-card p strong {
+    color: var(--primary-color);
+}
+
+.project-links {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: auto; /* Push links to the bottom */
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.project-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.project-button:hover {
+    background-color: var(--hover-color);
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+/* Optional: Style for secondary project button (e.g., View Code) */
+.project-button.code {
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+.project-button.code:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+}
+
+
+/* --------------------- */
+/* Contact Section       */
+/* --------------------- */
+.contact-section {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-section ul {
+    margin-top: 2em;
+    padding-left: 0;
+}
+
+.contact-section li {
+    margin-bottom: 1em;
+    font-size: 1.1rem;
+}
+
+.contact-section li strong {
+    color: var(--primary-color);
+    margin-right: 0.5em;
+}
+
+/* Basic Form Styling (if you uncomment the HTML form) */
+/* form {
+    margin-top: 2em;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1em;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button[type="submit"] {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+    background-color: var(--hover-color);
+} */
+
+/* --------------------- */
+/* Footer                */
+/* --------------------- */
+footer {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px; /* Space above footer */
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* --------------------- */
+/* Media Queries         */
+/* --------------------- */
+
+/* Smaller Tablets and Large Phones */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; /* Slightly smaller base font */
+    }
+
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; }
+
+    header nav ul {
+        /* Basic handling: Reduce gap or hide/show with JS later */
+        gap: 10px;
+    }
+    header nav ul li a {
+        font-size: 0.9rem; /* Smaller nav links */
+    }
+    header .resume-button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding-top: 80px;
+        padding-bottom: 60px;
+        min-height: auto; /* Let content define height */
+    }
+
+    .skills-container {
+       grid-template-columns: 1fr; /* Stack skill categories */
+    }
+
+    .projects-grid {
+       grid-template-columns: 1fr; /* Stack project cards */
+       gap: 20px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    :root {
+        --header-height: 60px; /* Smaller header on mobile */
+    }
+    body {
+        padding-top: var(--header-height);
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    h1 { font-size: 2.0rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.2rem; }
+
+    header {
+        padding: 0 15px;
+    }
+    header .logo {
+        font-size: 1.3rem;
+    }
+
+    /* Very basic nav handling for small screens without JS */
+    header nav ul {
+       display: none; /* Hide list on very small screens (simplest) */
+       /* OR let it wrap: flex-wrap: wrap; justify-content: center; */
+    }
+    /* A burger menu icon (requiring JS) is the ideal solution here */
+    /* For now, let's hide the list, keeping only logo and maybe resume */
+    header nav ul li:last-child { /* Keep resume button visible? */
+        display: block; /* Ensure resume button is visible if ul is hidden */
+    }
+
+    .hero {
+        padding: 60px 15px 40px;
+    }
+    .hero h2 { font-size: 1.3rem; }
+    .hero .tagline { font-size: 1rem; }
+    .hero .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        display: block; /* Stack buttons */
+        width: 80%;
+        max-width: 250px;
+        margin: 10px auto; /* Center stacked buttons */
+    }
+
+    .project-card {
+        border-radius: 5px;
+    }
+
+    .contact-section li {
+        font-size: 1rem;
+    }
 }
