@@ -1,13 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags define character set and viewport for responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaron Lee - Portfolio</title>
+
+    <!-- This is the text that appears in the browser tab -->
+    <title>Aaron Lee - Personal Portfolio</title> 
+
+    <!-- Link to your CSS file located in the 'css' folder -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
-<script src="js/script.js"></script>
 <body>
-    
+
+    <!-- Header Section: Usually contains main heading and maybe tagline/nav -->
+    <header>
+        <h1>Aaron Lee</h1> 
+        <p>Aspiring Software Developer | New Graduate</p> 
+        <!-- Navigation can also go in the header or its own <nav> tag -->
+    </header>
+
+    <!-- Navigation Section (Optional placement, can be in header too) -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- Add link to Resume later -->
+        </ul>
+    </nav>
+
+    <!-- Main Content Area: Contains the core sections of your page -->
+    <main>
+
+        <!-- About Section -->
+        <section id="about"> <!-- id allows linking from nav -->
+            <h2>About Me</h2>
+            <p>
+                Welcome! I am a recent Computer Engineering graduate from UC Santa Barbara passionate interested in entry-level opportunities in software, firmware, embedded, and data.
+                I enjoy building efficient and scalable solutions to real-world problems. This website showcases some of my work and skills.
+                <!-- Add more about yourself here -->
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>My Projects</h2>
+            <p>Here are a few projects I've worked on:</p>
+            <!-- You will add project details here later, maybe using <article> tags -->
+            <article>
+                <h3>Low-Latency On-Disk Database For Blockchain</h3>
+                <p>Description of the project...</p>
+                <p>Technologies used: HTML, CSS, JavaScript</p>
+                <a href="#">View Code (GitHub)</a> <!-- Link to GitHub repo -->
+                <!-- <a href="#">Live Demo</a> --> <!-- Optional link to live version -->
+            </article>
+            <article>
+                <h3>Real-Time Facial Recognition Analyzer</h3>
+                <p>Description of the project...</p>
+                <p>Technologies used: Python, Flask, etc.</p>
+                <a href="#">View Code (GitHub)</a>
+            </article>
+            <article>
+                <h3>Parallelized Web Scraper Tool</h3>
+                <p>Description of the project...</p>
+                <p>Technologies used: Python, Flask, etc.</p>
+                <a href="#">View Code (GitHub)</a>
+            </article>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>
+                You can reach me via text or email. I'd love to connect on LinkedIn!
+            </p>
+            <ul>
+                <li>Text: <a href="tel:+16503827190">(650) 382-7190</a></li>
+                <li>Email: <a href="mailto:hylee@ucsb.edu">hylee@ucsb.edu</a></li> 
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/hao-lee-582768256/" target="_blank">LinkedIn</a></li>
+                <li>GitHub: <a href="https://github.com/30912hyl" target="_blank">GitHub</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer Section: Copyright, maybe secondary links -->
+    <footer>
+        <p>© <span id="current-year"></span> Aaron Lee. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to your JavaScript file located in the 'js' folder -->
+    <!-- Typically placed just before the closing </body> tag -->
+    <!-- This ensures the HTML is loaded before the script tries to interact with it -->
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
