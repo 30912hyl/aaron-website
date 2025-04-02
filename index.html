@@ -12,6 +12,8 @@
     <!-- Link to your CSS file located in the 'css' folder -->
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 </head>
 <body>
 
@@ -46,7 +48,7 @@
         </section>
 
         <!-- About Me Section -->
-        <section id="about" class="about-section">
+        <section id="about" class="about-section" data-aos="fade-up">
             <h2>About Me</h2>
             <p>
                 Welcome! I'm a recent graduate from UC Santa Barbara with a degree in Computer Engineering. I'm deeply interested in [Your Specific Interests, e.g., building efficient backend systems, creating intuitive user interfaces, analyzing complex datasets].
@@ -71,7 +73,7 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <article class="project-card">
+                <article class="project-card" data-aos="zoom-in-up">
                     <!-- Optional: <img src="images/project1-thumbnail.jpg" alt="Screenshot of Project 1"> -->
                     <h3>[Project Title 1]</h3>
                     <p>[Brief description of the project: what it does, the problem it solves.]</p>
@@ -83,7 +85,7 @@
                 </article>
 
                 <!-- Project 2 -->
-                <article class="project-card">
+                <article class="project-card" data-aos="zoom-in-up">
                     <!-- Optional: <img src="images/project2-thumbnail.jpg" alt="Screenshot of Project 2"> -->
                     <h3>[Project Title 2]</h3>
                     <p>[Brief description of the project: what it does, the problem it solves.]</p>
@@ -95,7 +97,7 @@
                 </article>
 
                 <!-- Add more project cards as needed -->
-                <article class="project-card">
+                <article class="project-card" data-aos="zoom-in-up">
                     <h3>[Project Title 3 - Maybe a University Project]</h3>
                     <p>[Brief description of the project.]</p>
                     <p><strong>Technologies:</strong> [List key technologies used]</p>
@@ -145,6 +147,8 @@
         <p>© <span id="current-year"></span> Aaron Lee. All rights reserved.</p>
     </footer>
 
+    <!-- add animate on scroll library-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- Link to your JavaScript file located in the 'js' folder -->
     <!-- Typically placed just before the closing </body> tag -->
     <!-- This ensures the HTML is loaded before the script tries to interact with it -->
