@@ -1,157 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags define character set and viewport for responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio website for Aaron Lee, a recent graduate specializing in Software Development, Embedded Systems, and Data Engineering.">
+    <meta name="description" content="Portfolio of [Your Name], graduate specialist in [Your Field/Area].">
+    <title>[Your Name] - Portfolio</title>
 
-    <!-- This is the text that appears in the browser tab -->
-    <title>Aaron Lee - Personal Portfolio</title> 
-
-    <!-- Link to your CSS file located in the 'css' folder -->
+    <!-- Link to your CSS file - CRITICAL -->
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Elegant Font (Optional: Uncomment if using Google Fonts) -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"> -->
+
+    <!-- AOS (If using simple scroll animations) -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 
 </head>
 <body>
 
-    <!-- Header Section: Usually contains main heading and maybe tagline/nav -->
-    <header>
-        <nav>
-            <a href="#home" class="logo">Aaron Lee</a> <!-- Or use an actual logo image -->
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
+    <!-- Simplified Header -->
+    <header id="main-header">
+        <nav class="header-nav content-wrapper">
+            <a href="#home" class="logo">[Your Initial/Logo Text]</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+            </button>
+            <ul id="primary-navigation" data-visible="false">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <!-- Optional: Link to your resume TODO-->
-                <li><a href="[Link_To_Your_Resume.pdf]" target="_blank" class="resume-button">Resume</a></li> 
+                <li><a href="[Link_To_Your_Resume.pdf]" target="_blank" class="nav-resume-link">Resume</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content Area: Contains the core sections of your page -->
+    <!-- Main Content -->
     <main>
-        <!-- Hero Section: Introduction / Welcome -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Hi, I'm Aaron Lee</h1>
-                <h2>A passionate [Your Title/Aspiration, e.g., Software Engineer, Full-Stack Developer, UX/UI Designer]</h2>
-                <p class="tagline">[A brief, engaging tagline about yourself or what you do, e.g., Building creative solutions for the web. | Eager to leverage data to solve real-world problems.]</p>
-                <a href="#projects" class="cta-button">View My Work</a>
-                <a href="#contact" class="cta-button secondary">Get In Touch</a>
+
+        <!-- Section 1: Hero -->
+        <section id="home" class="hero-section full-width dark-bg">
+            <div class="content-wrapper hero-content-grid">
+                <div class="hero-text">
+                    <h1>[Your Name]</h1>
+                    <h2>[Your Title/Aspiration, e.g., Software Engineer. Creative Developer.]</h2>
+                    <p class="hero-tagline">[Short, impactful statement. e.g., Building elegant digital experiences.]</p>
+                    <div class="hero-cta-buttons">
+                        <a href="#projects" class="cta-button primary">View My Work</a>
+                        <a href="#contact" class="cta-button secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <!-- Optional Visual Element -->
+                <!-- <div class="hero-visual">
+                    <img src="images/profile-abstract.png" alt="Abstract graphic or profile picture">
+                </div> -->
             </div>
-            <!-- Optional: Add a profile picture -->
-            <!-- <img src="images/profile-picture.jpg" alt="Profile picture of Aaron Lee" class="profile-pic"> -->
         </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="about-section" data-aos="fade-up">
-            <h2>About Me</h2>
-            <p>
-                Welcome! I'm a recent graduate from UC Santa Barbara with a degree in Computer Engineering. I'm deeply interested in [Your Specific Interests, e.g., building efficient backend systems, creating intuitive user interfaces, analyzing complex datasets].
-            </p>
-            <p>
-                During my studies, I focused on [Mention key areas or coursework, e.g., software development principles, machine learning algorithms, human-computer interaction]. I'm now eager to apply my skills and passion to contribute to innovative projects in [Your Desired Industry/Area]. I'm a quick learner, a collaborative team player, and I'm excited about the challenges ahead.
-            </p>
-            <!-- Optional: Add more personal details like hobbies if appropriate -->
+        <!-- Section 2: About -->
+        <section id="about" class="about-section">
+            <div class="content-wrapper narrow"> <!-- Narrower wrapper for text -->
+                <h2>About Me</h2>
+                <p>
+                    A recent graduate from [Your University] ([Degree]), passionate about crafting [mention specific interest like 'performant web applications' or 'intuitive user interfaces']. I thrive on solving complex problems and continuously learning new technologies.
+                </p>
+                 <p>
+                    Driven by [mention a core value like 'user-centric design' or 'code quality'], I'm seeking opportunities to contribute to innovative projects and grow within a collaborative team.
+                </p>
+            </div>
         </section>
-        <!--
-        <section id="about"> 
-            <h2>About Me</h2>
-            <p>
-                Welcome! I am a recent Computer Engineering graduate from UC Santa Barbara passionate interested in entry-level opportunities in software, firmware, embedded, and data.
-                I enjoy building efficient and scalable solutions to real-world problems. This website showcases some of my work and skills.
-            </p>
-        </section>
-        -->
-        <!-- Projects Section -->
-         
-        <section id="projects" class="projects-section">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <article class="project-card" data-aos="zoom-in-up">
-                    <!-- Optional: <img src="images/project1-thumbnail.jpg" alt="Screenshot of Project 1"> -->
-                    <h3>[Project Title 1]</h3>
-                    <p>[Brief description of the project: what it does, the problem it solves.]</p>
-                    <p><strong>Technologies:</strong> [List key technologies used, e.g., React, Node.js, MongoDB]</p>
-                    <div class="project-links">
-                        <a href="[Link to Live Demo (if applicable)]" target="_blank" class="project-button">Live Demo</a>
-                        <a href="[Link to GitHub Repository]" target="_blank" class="project-button">View Code</a>
+
+        <!-- Section 3: Skills -->
+        <section id="skills" class="skills-section light-bg"> <!-- Subtle background change -->
+             <div class="content-wrapper">
+                <h2>Core Skills</h2>
+                <div class="skills-list">
+                    <!-- Example: Grouping skills. Could use icons instead of text labels -->
+                    <div class="skill-group">
+                        <span class="skill-label">Languages:</span> Python, JavaScript (ES6+), HTML5, CSS3, SQL
                     </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card" data-aos="zoom-in-up">
-                    <!-- Optional: <img src="images/project2-thumbnail.jpg" alt="Screenshot of Project 2"> -->
-                    <h3>[Project Title 2]</h3>
-                    <p>[Brief description of the project: what it does, the problem it solves.]</p>
-                    <p><strong>Technologies:</strong> [List key technologies used, e.g., Python, Flask, PostgreSQL]</p>
-                    <div class="project-links">
-                        <!-- <a href="[Link to Live Demo]" target="_blank" class="project-button">Live Demo</a> -->
-                        <a href="[Link to GitHub Repository]" target="_blank" class="project-button">View Code</a>
+                    <div class="skill-group">
+                        <span class="skill-label">Frameworks:</span> React, Node.js, Express, Next.js <!-- Be specific -->
                     </div>
-                </article>
+                     <div class="skill-group">
+                        <span class="skill-label">Tools:</span> Git, Docker, Figma, AWS Basics, PostgreSQL
+                    </div>
+                     <div class="skill-group">
+                        <span class="skill-label">Concepts:</span> API Design, Responsive Design, Agile, Testing
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Add more project cards as needed -->
-                <article class="project-card" data-aos="zoom-in-up">
-                    <h3>[Project Title 3 - Maybe a University Project]</h3>
-                    <p>[Brief description of the project.]</p>
-                    <p><strong>Technologies:</strong> [List key technologies used]</p>
+        <!-- Section 4: Projects Showcase -->
+        <section id="projects" class="projects-showcase-section">
+            <div class="content-wrapper section-intro">
+                 <h2>Selected Work</h2>
+                 <p>A few projects I've built, focusing on [mention a key theme, e.g., user experience and performance].</p>
+            </div>
+
+            <!-- Project 1 -->
+            <article class="project-showcase full-width layout-image-left"> <!-- Image Left -->
+                <div class="project-image">
+                    <img src="images/project1-large.jpg" alt="Screenshot or mockup of [Project Title 1]">
+                </div>
+                <div class="project-details">
+                    <div class="details-content">
+                        <h3>[Project Title 1]</h3>
+                        <p>[Concise description: What it is, key features/problem solved. Focus on impact.]</p>
+                        <p class="tech-stack"><strong>Tech:</strong> React, Node.js, PostgreSQL, Styled Components</p>
                         <div class="project-links">
-                        <a href="[Link to GitHub Repository]" target="_blank" class="project-button">View Code</a>
-                        <!-- Maybe link to a report or presentation if no live demo/code -->
-                        <!-- <a href="[Link to Report.pdf]" target="_blank" class="project-button">View Report</a> -->
+                            <a href="[Link to Live Demo]" target="_blank" class="project-link">Live Demo <span class="arrow">→</span></a>
+                            <a href="[Link to GitHub Repo]" target="_blank" class="project-link">View Code <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
+            <!-- Project 2 -->
+            <article class="project-showcase full-width layout-image-right"> <!-- Image Right -->
+                 <div class="project-image">
+                    <img src="images/project2-large.jpg" alt="Screenshot or mockup of [Project Title 2]">
+                </div>
+                <div class="project-details">
+                     <div class="details-content">
+                        <h3>[Project Title 2]</h3>
+                        <p>[Concise description: What it is, key features/problem solved. Focus on impact.]</p>
+                        <p class="tech-stack"><strong>Tech:</strong> Python, Flask, MongoDB, Docker</p>
+                        <div class="project-links">
+                            <!-- <a href="[Link to Live Demo]" target="_blank" class="project-link">Live Demo <span class="arrow">→</span></a> -->
+                            <a href="[Link to GitHub Repo]" target="_blank" class="project-link">View Code <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+             <!-- Add More Projects Following the Pattern -->
+
+        </section>
+
+        <!-- Section 5: Contact -->
+        <section id="contact" class="contact-section dark-bg">
+            <div class="content-wrapper narrow">
+                <h2>Let's Connect</h2>
+                <p>
+                    I'm actively seeking [type, e.g., full-time Software Engineer] roles. Interested in collaborating or have an opportunity? I'd love to hear from you.
+                </p>
+                <div class="contact-links">
+                     <a href="mailto:[your.email@example.com]" class="contact-link-button">Email Me</a>
+                     <a href="[Your LinkedIn Profile URL]" target="_blank" class="contact-link-button">LinkedIn</a>
+                     <a href="[Your GitHub Profile URL]" target="_blank" class="contact-link-button">GitHub</a>
+                </div>
+                 <!-- Optional simplified form placeholder -->
+                 <!-- <div class="simple-form-note">Or leave a quick message (Form backend needed)</div> -->
             </div>
-        </section>    
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <h2>Get In Touch</h2>
-            <p>
-                You can reach me via text or email. I'd love to connect on LinkedIn!
-            </p>
-            <ul>
-                <li>Text: <a href="tel:+16503827190">(650) 382-7190</a></li>
-                <li>Email: <a href="mailto:hylee@ucsb.edu">hylee@ucsb.edu</a></li> 
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/hao-lee-582768256/" target="_blank">LinkedIn</a></li>
-                <li>GitHub: <a href="https://github.com/30912hyl" target="_blank">GitHub</a></li>
-            </ul>
-            <!-- Optional: Add a simple contact form (requires backend or service like Formspree) -->
-            <!--
-            <form action="[Your Formspree endpoint or backend script]" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-            -->
         </section>
 
     </main>
 
-    <!-- Footer Section: Copyright, maybe secondary links -->
-    <footer>
-        <p>© <span id="current-year"></span> Aaron Lee. All rights reserved.</p>
+    <!-- Minimal Footer -->
+    <footer id="main-footer">
+        <div class="content-wrapper footer-content">
+            <p>© <span id="current-year"></span> [Your Name].</p>
+            <!-- Optional: Link back to top -->
+            <!-- <a href="#home" class="back-to-top">Top ↑</a> -->
+        </div>
     </footer>
 
-    <!-- add animate on scroll library-->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <!-- Link to your JavaScript file located in the 'js' folder -->
-    <!-- Typically placed just before the closing </body> tag -->
-    <!-- This ensures the HTML is loaded before the script tries to interact with it -->
-    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <script src="script.js"></script> <!-- Ensure this points to your JS file -->
+
 </body>
 </html>
